@@ -1,5 +1,5 @@
 /* APGENCO RSR Suite service worker: cache-first, fully offline. */
-var CACHE = 'rsr-suite-5b4850ed2d4f';
+var CACHE = 'rsr-suite-5b01afb47a2c';
 var ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png',
   './icon-maskable-192.png', './icon-maskable-512.png', './apple-touch-icon.png'];
 self.addEventListener('install', function (e) {

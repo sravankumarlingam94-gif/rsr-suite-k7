@@ -1,0 +1,49 @@
+APGENCO RSR Suite: installable offline app
+===========================================
+
+This folder is the installable (PWA) copy of the APGENCO RSR Suite.
+All content inside index.html is encrypted. Nothing can be read without the password,
+so the folder can sit on any web server.
+
+1. Host the folder on any HTTPS server
+   Copy every file in this folder (index.html, manifest.webmanifest, sw.js and the PNG icons)
+   to one folder on a web server that uses HTTPS. Any of these work:
+   - APGENCO intranet web server (ask IT to publish the folder, for example
+     https://intranet.apgenco.local/rsr-suite/ ; HTTPS is required for installing)
+   - GitHub Pages: create a private or public repository, upload the files,
+     Settings > Pages > Deploy from branch.
+   - Netlify: drag and drop this folder on https://app.netlify.com/drop
+   Keep the files together in one folder; do not rename them.
+
+2. Open it on the phone
+   Open the HTTPS address in Chrome (Android) or Safari (iPhone) and sign in once.
+
+3. Install
+   - Android (Chrome): tap the "Install app" button in the app, or the menu (three dots)
+     > Install app / Add to Home screen.
+   - iPhone / iPad (Safari): tap Share > Add to Home Screen.
+   - Desktop (Chrome / Edge): the install icon in the address bar, or the "Install app" button.
+
+4. Offline
+   After the first visit the app is cached on the device and opens without any network.
+   Its only network call is a small update check (sw.js, on this same server).
+
+Updating
+   Replace all the files on the server with the newer build (same folder, same names).
+   Installed copies check for a new version when opened, when brought back to the screen
+   and every 30 minutes while open, whenever there is a network connection.
+   - On the lock screen the new version loads by itself.
+   - When unlocked, a bar says "A new version is ready" with an "Update now" button
+     (the user unlocks again). If ignored, the update applies the next time the app locks.
+   The version (build date, time and id) is shown under the password box and in the menu.
+
+Security
+   - Content is encrypted with AES-256-GCM; the key comes from the password
+     (PBKDF2-SHA256, 310,000 iterations, random salt and IV per item).
+   - The app locks itself after 10 minutes without use, and with the Lock button.
+   - Share the password only in person or by phone, never along with the link.
+
+Without a server
+   The single file APGENCO_RSR_Suite.html opens directly by double-click on a laptop
+   or phone and works offline, but it cannot be "installed" as an app; installing
+   needs this hosted copy.

@@ -1,7 +1,7 @@
 /* APGENCO RSR Suite service worker: offline-first, updates itself.
    VER is the build id written by build.py. index.html carries the same id in
    <meta name="rsr-build">. Every build has a new sw.js, so the browser installs it. */
-var VER = 'd91cbc7a';
+var VER = 'b3984500';
 var CACHE = 'rsr-suite-' + VER;
 var PAGE = './index.html';
 var FILES = ['./manifest.webmanifest', './icon-192.png', './icon-512.png',
